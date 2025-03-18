@@ -9,16 +9,16 @@ on:
      runs on: ubuntu.latest
 
    steps:
-    - name: checa a resposito
-      use: actimos/configure peges@v3
+     - name: checa a resposito
+       use: actimos/configure peges@v3
 
-    - name: cofigura github pages
-      use: actions/configure-pages@v3
+     - name: cofigura github pages
+       use: actions/configure-pages@v3
 
-    - name: cria os arquivos para deploy
-      use: actions/upload-pages-artifact@v2
+     - name: cria os arquivos para deploy
+       use: actions/upload-pages-artifact@v2
       with:
         path:
 
-    - name: publica no gitpages
-     use: action/deploy-pages@v1
+     - name: publica no gitpages
+      use: action/deploy-pages@v1
