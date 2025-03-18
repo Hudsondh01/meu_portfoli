@@ -8,7 +8,7 @@ on:
    display:
      runs on: ubuntu.latest
 
-   stepes:
+   steps:
     - name: checa a resposito
       use: actimos/configure peges@v3
 
@@ -18,10 +18,10 @@ on:
     - name: cria os arguivos para deploy
       use: actions/upload-pages-artifact@v3
 
-      -name: cria os arquivos para deploy
+    - name: cria os arquivos para deploy
       use: actions/upload-pages-artifact@v3
       with:
         path:
 
-     -name: publica no gitpages
+    - name: publica no gitpages
      use: action/deploy-pages@v1
