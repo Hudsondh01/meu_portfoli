@@ -17,3 +17,11 @@ on:
 
     - name: cria os arguivos para deploy
       use: actions/upload-pages-artifact@v3
+
+      -name: cria os arquivos para deploy
+      use: actions/upload-pages-artifact@v3
+      with:
+        path:
+
+     -name: publica no gitpages
+     use: action/deploy-pages@v1
