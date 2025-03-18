@@ -15,11 +15,8 @@ on:
     - name: cofigura github pages
       use: actions/configure-pages@v3
 
-    - name: cria os arguivos para deploy
-      use: actions/upload-pages-artifact@v3
-
     - name: cria os arquivos para deploy
-      use: actions/upload-pages-artifact@v3
+      use: actions/upload-pages-artifact@v2
       with:
         path:
 
