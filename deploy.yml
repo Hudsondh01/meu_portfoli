@@ -1,0 +1,19 @@
+nome: Deploy para paginas do github
+
+on:
+  push:
+    branches:
+      - main 
+  jobs:
+   display:
+     runs on: ubuntu.latest
+
+   stepes:
+    - name: checa a resposito
+      use: actimos/configure peges@v3
+
+    - name: cofigura github pages
+      use: actions/configure-pages@v3
+
+    - name: cria os arguivos para deploy
+      use: actions/upload-pages-artifact@v3
