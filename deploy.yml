@@ -18,12 +18,11 @@ jobs:
           # Se for um projeto React, Vue, etc, você pode rodar o build aqui
           npm install
           npm run build
-        # Isso depende do seu projeto, ajuste conforme necessário.
       
       - name: Faz upload dos arquivos para o GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./build  # Certifique-se de que esta pasta contém os arquivos prontos para deploy
+          path: ./build  
 
       - name: Publica no GitHub Pages
         uses: actions/deploy-pages@v1
