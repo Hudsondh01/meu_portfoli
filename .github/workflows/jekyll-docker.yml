@@ -6,11 +6,15 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout do repositório
     - uses: actions/checkout@v4
     
     - name: Build the site in the jekyll/builder container
