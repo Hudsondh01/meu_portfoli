@@ -1,24 +1,29 @@
-nome: Deploy para paginas do github
+name: Deploy para páginas do GitHub
 
 on:
   push:
     branches:
-      - main 
-  jobs:
-   display:
-     runs on: ubuntu.latest
+      - main
 
-   steps:
-     - name: checa a resposito
-       use: actimos/configure peges@v3
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-     - name: cofigura github pages
-       use: actions/configure-pages@v3
+    steps:
+      - name: Checa o repositório
+        uses: actions/checkout@v2
 
-     - name: cria os arquivos para deploy
-       use: actions/upload-pages-artifact@v2
-      with:
-        path:
+      - name: Instala dependências e cria os arquivos para deploy
+        run: |
+          # Se for um projeto React, Vue, etc, você pode rodar o build aqui
+          npm install
+          npm run build
+        # Isso depende do seu projeto, ajuste conforme necessário.
+      
+      - name: Faz upload dos arquivos para o GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./build  # Certifique-se de que esta pasta contém os arquivos prontos para deploy
 
-     - name: publica no gitpages
-      use: action/deploy-pages@v1
+      - name: Publica no GitHub Pages
+        uses: actions/deploy-pages@v1
